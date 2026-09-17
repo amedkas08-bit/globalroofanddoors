@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Global Roof and Doors - Professional roofing and door solutions in Lagos, Nigeria. Quality workmanship, fair pricing, and reliable service." />
+  <title>Global Roof and Doors | Roofing Contractor in Lagos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#061522;
+      --panel:#0d2232;
+      --panel-2:#112c3e;
+      --text:#f7f9fb;
+      --muted:#9eacb6;
+      --gold:#f4c21b;
+      --gold-2:#e2c487;
+      --line:rgba(255,255,255,.10);
+      --white:#ffffff;
+      --dark:#061522;
+      --max:1180px;
+      --shadow:0 18px 50px rgba(0,0,0,.28);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Manrope',sans-serif;
+      background:#f5f7f8;
+      color:var(--text);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    a{text-decoration:none;color:inherit}
+    img{display:block;width:100%}
+    .container{width:min(92%,var(--max));margin:auto}
+    .eyebrow{
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font-size:.78rem;
+      color:var(--gold-2);
+      font-weight:800;
+      margin-bottom:.8rem;
+    }
+    h1,h2,h3{line-height:1.08}
+    h1,h2{font-family:'Playfair Display',serif}
+    h2{font-size:clamp(2.1rem,4vw,3.9rem)}
+    p{color:var(--muted)}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.6rem;
+      border-radius:999px;
+      padding:.98rem 1.35rem;
+      font-weight:800;
+      border:1px solid transparent;
+      transition:.25s ease;
+      cursor:pointer;
+    }
+    .btn-primary{
+      background:var(--gold);
+      color:#14110b;
+      box-shadow:0 12px 30px rgba(201,169,110,.2);
+    }
+    .btn-primary:hover{transform:translateY(-2px);background:var(--gold-2)}
+    .btn-secondary{
+      border-color:rgba(255,255,255,.35);
+      color:#fff;
+      background:rgba(0,0,0,.18);
+      backdrop-filter:blur(6px);
+    }
+    .btn-secondary:hover{border-color:var(--gold);color:var(--gold-2)}
+    .section{padding:96px 0}
+    .section-head{max-width:730px;margin-bottom:44px}
+    .section-head p{margin-top:14px;font-size:1.02rem}
+
+    /* Header */
+    header{
+      position:fixed;
+      inset:0 0 auto;
+      z-index:50;
+      border-bottom:1px solid transparent;
+      transition:.25s ease;
+    }
+    header.scrolled{
+      background:rgba(7,11,9,.92);
+      backdrop-filter:blur(18px);
+      border-color:var(--line);
+    }
+    nav{
+      min-height:82px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:28px;
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand-mark{
+      width:44px;height:44px;border:1px solid var(--gold);
+      display:grid;place-items:center;border-radius:12px;
+      font-weight:900;color:var(--gold-2);font-size:1.05rem;
+      background:linear-gradient(145deg,rgba(201,169,110,.16),rgba(255,255,255,.02));
+    }
+    .brand-name{font-weight:900;letter-spacing:.05em}
+    .brand-name small{display:block;font-size:.66rem;color:var(--muted);letter-spacing:.16em;margin-top:1px}
+    .nav-links{display:flex;align-items:center;gap:28px}
+    .nav-links a{font-size:.92rem;color:#d5dbd6;font-weight:700}
+    .nav-links a:hover{color:var(--gold-2)}
+    .menu-btn{display:none;background:none;border:0;color:#fff;font-size:1.5rem;cursor:pointer}
+
+    /* Hero */
+    .hero{
+      min-height:100vh;
+      display:grid;
+      align-items:center;
+      position:relative;
+      background:
+        linear-gradient(90deg,rgba(5,8,7,.93) 0%,rgba(6,9,8,.76) 45%,rgba(7,11,9,.28) 100%),
+        url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1800&q=90') center/cover no-repeat;
+    }
+    .hero:after{
+      content:"";
+      position:absolute;inset:auto 0 0;height:180px;
+      background:linear-gradient(transparent,#0b0f0d);
+      pointer-events:none;
+    }
+    .hero-content{
+      position:relative;z-index:2;
+      max-width:800px;
+      padding-top:92px;
+    }
+    .rating-chip{
+      display:inline-flex;gap:10px;align-items:center;
+      background:rgba(12,18,15,.62);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:999px;
+      padding:.58rem .82rem;
+      margin-bottom:22px;
+      backdrop-filter:blur(8px);
+      font-size:.86rem;
+      color:#e5e9e6;
+    }
+    .stars{color:#f2c66d;letter-spacing:.08em}
+    .hero h1{
+      font-size:clamp(3.4rem,8vw,7rem);
+      max-width:900px;
+      letter-spacing:-.035em;
+    }
+    .hero h1 span{color:var(--gold-2)}
+    .hero p{
+      max-width:700px;
+      margin:22px 0 32px;
+      font-size:clamp(1rem,1.6vw,1.18rem);
+      color:#d5ddd8;
+    }
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-trust{
+      margin-top:34px;
+      display:flex;gap:22px;flex-wrap:wrap;
+      color:#c5cec8;
+      font-size:.88rem;
+      font-weight:700;
+    }
+    .hero-trust span:before{content:"✓";color:var(--gold-2);margin-right:8px}
+
+    /* Trust strip */
+    .trust-strip{
+      position:relative;z-index:3;
+      margin-top:-48px;
+    }
+    .trust-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      background:linear-gradient(145deg,#17201b,#101612);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      border-radius:24px;
+      overflow:hidden;
+    }
+    .trust-item{
+      padding:28px 24px;
+      border-right:1px solid var(--line);
+    }
+    .trust-item:last-child{border-right:0}
+    .trust-item strong{display:block;font-size:1.55rem;color:#fff}
+    .trust-item span{display:block;color:var(--muted);font-size:.85rem;margin-top:4px}
+
+    /* About */
+    .about-grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:70px;
+      align-items:center;
+    }
+    .about-copy p{margin:18px 0 28px;font-size:1.03rem}
+    .about-points{display:grid;gap:13px;margin:24px 0 30px}
+    .about-points div{
+      display:flex;align-items:flex-start;gap:12px;
+      padding:15px 0;border-bottom:1px solid var(--line)
+    }
+    .about-points i{
+      width:26px;height:26px;border-radius:50%;
+      display:grid;place-items:center;
+      background:rgba(201,169,110,.16);
+      color:var(--gold-2);
+      font-style:normal;font-weight:900;flex:0 0 auto;
+    }
+    .image-stack{position:relative}
+    .image-main{
+      border-radius:28px;
+      overflow:hidden;
+      min-height:560px;
+      box-shadow:var(--shadow);
+    }
+    .image-main img{height:560px;object-fit:cover}
+    .floating-card{
+      position:absolute;
+      left:-34px;bottom:32px;
+      background:#f3efe6;color:#152534;;
+      border-radius:18px;padding:20px 22px;
+      width:235px;
+      box-shadow:0 20px 50px rgba(0,0,0,.22);
+    }
+    .floating-card strong{font-size:2rem;display:block;line-height:1}
+    .floating-card span{font-size:.82rem;color:#5f665f;font-weight:700}
+
+    /* Services */
+    .services{background:#061522}
+    .service-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .service-card{
+      padding:30px;
+      background:linear-gradient(145deg,#17201b,#101613);
+      border:1px solid var(--line);
+      border-radius:22px;
+      min-height:270px;
+      transition:.25s ease;
+    }
+    .service-card:hover{transform:translateY(-6px);border-color:rgba(201,169,110,.45)}
+    .service-no{font-size:.82rem;color:var(--gold-2);font-weight:800;letter-spacing:.12em}
+    .service-card h3{margin:42px 0 12px;font-size:1.35rem}
+    .service-card p{font-size:.92rem}
+
+    /* Projects */
+    .project-grid{
+      display:grid;
+      grid-template-columns:1.3fr .7fr;
+      grid-template-rows:310px 310px;
+      gap:18px;
+    }
+    .project{
+      position:relative;overflow:hidden;border-radius:24px;
+      border:1px solid var(--line);
+      min-height:280px;
+    }
+    .project:first-child{grid-row:1/3}
+    .project img{height:100%;object-fit:cover;transition:.4s ease}
+    .project:after{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(transparent 45%,rgba(4,6,5,.88));
+    }
+    .project:hover img{transform:scale(1.04)}
+    .project-info{position:absolute;z-index:2;left:24px;right:24px;bottom:22px}
+    .project-info span{color:var(--gold-2);font-size:.76rem;text-transform:uppercase;letter-spacing:.12em;font-weight:800}
+    .project-info h3{margin-top:5px;font-size:1.35rem}
+
+    /* Why */
+    .why-grid{
+      display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center;
+    }
+    .why-image{border-radius:28px;overflow:hidden;min-height:560px}
+    .why-image img{height:560px;object-fit:cover}
+    .benefits{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px}
+    .benefit{
+      padding:18px;border:1px solid var(--line);border-radius:16px;
+      background:#ffffff;;
+    }
+    .benefit strong{display:block;margin-bottom:5px}
+    .benefit span{color:var(--muted);font-size:.86rem}
+
+    /* Process */
+    .process{background:#f5f7f8;color:#152534}
+    .process p{color:#687985}
+    .process .eyebrow{color:#b58b00}
+    .process-grid{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:42px;
+    }
+    .step{
+      padding:28px 24px;border-radius:20px;background:#ffffff;
+      border:1px solid #ded8cb;
+    }
+    .step .num{font-weight:900;color:#a27b39;font-size:.85rem;letter-spacing:.14em}
+    .step h3{margin:34px 0 8px;font-size:1.12rem}
+    .step p{font-size:.88rem}
+
+    /* Testimonials */
+    .testimonials{background:#f5f7f8}
+    .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .review-card{
+      padding:28px;border-radius:22px;
+      background:#ffffff;;border:1px solid var(--line);
+    }
+    .review-stars{color:#f0c56c;margin-bottom:18px;letter-spacing:.12em}
+    .review-card blockquote{font-size:.97rem;color:#d7dfda}
+    .review-card footer{
+      position:static;border:0;background:none;
+      margin-top:24px;font-size:.86rem;font-weight:800;color:#fff
+    }
+    .review-card footer span{display:block;color:var(--muted);font-size:.76rem;font-weight:600;margin-top:3px}
+
+    /* CTA */
+    .cta-wrap{padding:90px 0}
+    .cta{
+      border-radius:30px;
+      padding:70px 55px;
+      position:relative;overflow:hidden;
+      background:
+        linear-gradient(90deg,rgba(8,12,10,.94),rgba(8,12,10,.56)),
+        url('https://images.unsplash.com/photo-1632759835654-9f0c7f9f8f47?auto=format&fit=crop&w=1600&q=90') center/cover;
+      border:1px solid rgba(255,255,255,.12);
+    }
+    .cta h2{max-width:800px}
+    .cta p{max-width:670px;margin:18px 0 28px;color:#d1d9d4}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px}
+    .contact-list{display:grid;gap:14px;margin-top:28px}
+    .contact-item{
+      padding:17px 18px;border-radius:15px;border:1px solid var(--line);
+      background:#ffffff;;
+    }
+    .contact-item small{display:block;color:var(--gold-2);text-transform:uppercase;letter-spacing:.1em;font-weight:800;font-size:.67rem}
+    .contact-item span{display:block;color:#eef1ef;margin-top:4px;font-size:.92rem}
+    form{
+      display:grid;grid-template-columns:1fr 1fr;gap:14px;
+      padding:28px;background:#ffffff;;border:1px solid var(--line);border-radius:24px;
+    }
+    .full{grid-column:1/-1}
+    input,select,textarea{
+      width:100%;background:#f7f9fb;;border:1px solid rgba(255,255,255,.11);
+      color:#fff;border-radius:13px;padding:14px 15px;
+      outline:none;font:inherit;
+    }
+    input:focus,select:focus,textarea:focus{border-color:var(--gold)}
+    textarea{min-height:150px;resize:vertical}
+    select option{background:#f7f9fb;}
+    form button{border:0}
+
+    /* Footer */
+    .footer{
+      border-top:1px solid var(--line);
+      padding:36px 0;
+      background:#061522;
+    }
+    .footer-inner{
+      display:flex;justify-content:space-between;gap:24px;align-items:center;flex-wrap:wrap
+    }
+    .footer p{font-size:.82rem}
+    .footer-links{display:flex;gap:18px;flex-wrap:wrap;font-size:.82rem;color:#c2cac5}
+
+    .whatsapp{
+      position:fixed;right:20px;bottom:20px;z-index:60;
+      width:56px;height:56px;border-radius:50%;
+      display:grid;place-items:center;
+      background:#25D366;color:white;font-size:1.5rem;
+      box-shadow:0 12px 28px rgba(0,0,0,.3);
+      font-weight:900;
+    }
+
+    @media (max-width: 960px){
+      .nav-links{display:none;position:absolute;top:82px;left:4%;right:4%;padding:20px;background:#ffffff;;border:1px solid var(--line);border-radius:18px;flex-direction:column;align-items:flex-start}
+      .nav-links.open{display:flex}
+      .menu-btn{display:block}
+      nav>.btn{display:none}
+      .trust-grid{grid-template-columns:1fr 1fr}
+      .trust-item:nth-child(2){border-right:0}
+      .trust-item:nth-child(-n+2){border-bottom:1px solid var(--line)}
+      .about-grid,.why-grid,.contact-grid{grid-template-columns:1fr}
+      .service-grid,.review-grid{grid-template-columns:1fr 1fr}
+      .process-grid{grid-template-columns:1fr 1fr}
+      .image-stack{max-width:720px}
+      .project-grid{grid-template-columns:1fr 1fr;grid-template-rows:360px 280px}
+      .project:first-child{grid-column:1/-1;grid-row:auto}
+      .floating-card{left:20px}
+    }
+    @media (max-width: 640px){
+      .section{padding:72px 0}
+      .hero{min-height:880px;background-position:64% center}
+      .hero h1{font-size:3.45rem}
+      .trust-grid{grid-template-columns:1fr}
+      .trust-item{border-right:0;border-bottom:1px solid var(--line)}
+      .trust-item:last-child{border-bottom:0}
+      .service-grid,.review-grid,.process-grid,.benefits,.project-grid{grid-template-columns:1fr}
+      .project-grid{grid-template-rows:auto}
+      .project{height:330px}
+      .project:first-child{grid-column:auto}
+      .image-main,.image-main img,.why-image,.why-image img{min-height:420px;height:420px}
+      .floating-card{position:relative;left:auto;bottom:auto;margin:-48px 18px 0;width:auto}
+      .cta{padding:48px 24px}
+      form{grid-template-columns:1fr}
+      .full{grid-column:auto}
+      .footer-inner{align-items:flex-start;flex-direction:column}
+    }
+  
+/* Sharp roofing-contractor refinement */
+.topbar{
+  background:#061522;color:#dce7ed;font-size:.72rem;font-weight:700;
+  letter-spacing:.02em;border-bottom:1px solid rgba(255,255,255,.08);
+}
+.topbar-inner{
+  min-height:34px;display:flex;align-items:center;justify-content:space-between;gap:20px;
+}
+.topbar span{color:#ffd83d}
+.hero{border-bottom:4px solid #f4c21b}
+.hero h1{font-family:'Manrope',sans-serif;font-weight:900;letter-spacing:-.045em}
+.hero h1 span{color:#f4c21b}
+.brand-mark{border-color:#f4c21b;background:#f4c21b;color:#061522;border-radius:8px}
+.btn-primary{background:#f4c21b;color:#061522}
+.btn-primary:hover{background:#ffd83d}
+.section-head h2,.about-copy h2,.why-grid h2,.cta h2{font-family:'Manrope',sans-serif;font-weight:900;letter-spacing:-.035em}
+.service-card,.review-card,.benefit,.contact-item,form{box-shadow:0 10px 28px rgba(6,21,34,.07)}
+.service-photo-strip{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px;
+}
+.service-photo-strip img{height:180px;object-fit:cover;border-radius:16px}
+.project{box-shadow:0 10px 28px rgba(6,21,34,.10)}
+.rating-chip{border-color:rgba(244,194,27,.42)}
+.floating-card{border-top:4px solid #f4c21b}
+@media(max-width:640px){.topbar-inner{padding:7px 0;font-size:.64rem}.topbar-inner span:last-child{display:none}.service-photo-strip{grid-template-columns:1fr}.service-photo-strip img{height:210px}}
+
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container topbar-inner">
+    <div>📍 10 Agege Motor Road, Onipetes Bus Stop, Dopemu, Lagos</div>
+    <div><span>●</span> Open 24 hours &nbsp; | &nbsp; <span>☎</span> 0803 274 0641</div>
+  </div>
+</div>
+<header id="header">
+  <div class="container">
+    <nav>
+      <a href="#home" class="brand" aria-label="Global Roof and Doors home">
+        <div class="brand-mark">GR</div>
+        <div class="brand-name">GLOBAL ROOF <small>& DOORS</small></div>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#why">Why Us</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <a class="btn btn-primary" href="tel:08032740641">Call 0803 274 0641</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="rating-chip">
+          <span class="stars">★★★★★</span>
+          <strong>4.8</strong>
+          <span>from 17 Google reviews</span>
+        </div>
+        <div class="eyebrow">Roofing & Door Solutions • Lagos</div>
+        <h1>STRONG ROOFS. <span>LASTING PROTECTION.</span></h1>
+        <p>
+          Professional roofing solutions for homes, businesses and new developments. We deliver durable, stylish and reliable roofs that stand the test of time.
+          Built around quality workmanship, fair pricing and dependable service.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Get a Free Quote</a>
+          <a href="tel:08032740641" class="btn btn-secondary">Call Now</a>
+        </div>
+        <div class="hero-trust">
+          <span>Open 24 hours</span>
+          <span>Lagos-based</span>
+          <span>Customer-rated service</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust-strip">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-item"><strong>4.8/5</strong><span>Google rating</span></div>
+        <div class="trust-item"><strong>17</strong><span>Customer reviews</span></div>
+        <div class="trust-item"><strong>24/7</strong><span>Business hours</span></div>
+        <div class="trust-item"><strong>Lagos</strong><span>Serving local projects</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section" id="about">
+    <div class="container about-grid">
+      <div class="about-copy">
+        <div class="eyebrow">About Global Roof and Doors</div>
+        <h2>Quality work you can see. Reliability you can trust.</h2>
+        <p>
+          Global Roof and Doors is a Lagos roofing contractor serving customers who value professional workmanship,
+          durable solutions and fair pricing. Customer feedback highlights the company's professionalism,
+          quality work, affordability and dependable service.
+        </p>
+        <div class="about-points">
+          <div><i>✓</i><span>Professional roofing solutions for new and existing buildings.</span></div>
+          <div><i>✓</i><span>Roofing and door services for residential and commercial needs.</span></div>
+          <div><i>✓</i><span>Clear communication and customer-focused project delivery.</span></div>
+        </div>
+        <a href="#contact" class="btn btn-primary">Discuss Your Project</a>
+      </div>
+
+      <div class="image-stack">
+        <div class="image-main">
+          <img src="https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=1000&q=90" alt="Modern house with finished roof">
+        </div>
+        <div class="floating-card">
+          <strong>4.8 ★</strong>
+          <span>Rated by customers on Google</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">What We Do</div>
+        <h2>Roofing and door solutions for properties that deserve better.</h2>
+        <p>From a new roof to repairs, replacements and door solutions, we focus on practical, durable work with a professional finish.</p>
+      </div>
+
+      <div class="service-photo-strip" aria-hidden="true">
+  <img src="https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=700&q=90" alt="">
+  <img src="https://images.unsplash.com/photo-1621293954908-907159247fc8?auto=format&fit=crop&w=700&q=90" alt="">
+  <img src="https://images.unsplash.com/photo-1598228723793-52759bba239c?auto=format&fit=crop&w=700&q=90" alt="">
+</div>
+<div class="service-grid">
+        <article class="service-card">
+          <span class="service-no">01 / ROOFING</span>
+          <h3>New Roof Installation</h3>
+          <p>Professional roofing installation for new homes, renovations, estates and commercial properties.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-no">02 / REPLACEMENT</span>
+          <h3>Roof Replacement</h3>
+          <p>Replacement of worn, damaged or outdated roofing systems with dependable new solutions.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-no">03 / REPAIR</span>
+          <h3>Roof Repairs</h3>
+          <p>Assessment and repair of common roofing problems, including leaks, damaged sections and weather-related issues.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-no">04 / MAINTENANCE</span>
+          <h3>Roof Maintenance</h3>
+          <p>Preventive attention to help preserve your roofing system and reduce avoidable damage over time.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-no">05 / DOORS</span>
+          <h3>Door Solutions</h3>
+          <p>Door supply and installation support for homes and other building projects.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-no">06 / CONSULTATION</span>
+          <h3>Project Consultation</h3>
+          <p>Discuss your roofing or door requirements and receive guidance suited to your property and budget.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Project Showcase</div>
+        <h2>Built for protection. Finished for appearance.</h2>
+        <p>A premium portfolio layout for showcasing completed roofing and building projects. Replace these sample images with Global Roof and Doors' own project photos for the strongest result.</p>
+      </div>
+
+      <div class="project-grid">
+        <article class="project">
+          <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1200&q=85" alt="Residential roofing project">
+          <div class="project-info">
+            <span>Residential Roofing</span>
+            <h3>Modern Home Roof Installation</h3>
+          </div>
+        </article>
+        <article class="project">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85" alt="Modern property exterior">
+          <div class="project-info">
+            <span>Roofing Finish</span>
+            <h3>Contemporary Property Upgrade</h3>
+          </div>
+        </article>
+        <article class="project">
+          <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=85" alt="Luxury property project">
+          <div class="project-info">
+            <span>Property Solutions</span>
+            <h3>Premium Exterior Finish</h3>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="why">
+    <div class="container why-grid">
+      <div class="why-image">
+        <img src="https://images.unsplash.com/photo-1621293954908-907159247fc8?auto=format&fit=crop&w=1000&q=90" alt="Construction professionals at work">
+      </div>
+      <div>
+        <div class="eyebrow">Why Choose Us</div>
+        <h2>Professional service from first call to finished job.</h2>
+        <p style="margin-top:18px">
+          Reviews from customers repeatedly mention professional service, quality workmanship, fair or affordable pricing
+          and reliability.
+        </p>
+        <div class="benefits">
+          <div class="benefit"><strong>Quality Workmanship</strong><span>Attention to practical, durable finishing.</span></div>
+          <div class="benefit"><strong>Fair Pricing</strong><span>Customer feedback specifically highlights affordability.</span></div>
+          <div class="benefit"><strong>Reliable Service</strong><span>A business customers can contact for roofing needs.</span></div>
+          <div class="benefit"><strong>Professional Team</strong><span>Customer reviews describe the team as professional.</span></div>
+          <div class="benefit"><strong>Customer Focus</strong><span>Service built around clear project requirements.</span></div>
+          <div class="benefit"><strong>24-Hour Availability</strong><span>The business listing shows open 24 hours.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section process">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">How It Works</div>
+        <h2>Simple from enquiry to completion.</h2>
+        <p>A clear process helps customers move from an initial conversation to a finished roofing or door project.</p>
+      </div>
+      <div class="process-grid">
+        <div class="step"><span class="num">01 / CONTACT</span><h3>Tell Us What You Need</h3><p>Call, WhatsApp or send your project details through the quotation form.</p></div>
+        <div class="step"><span class="num">02 / ASSESS</span><h3>Project Assessment</h3><p>Your requirements, property and preferred solution are reviewed.</p></div>
+        <div class="step"><span class="num">03 / QUOTE</span><h3>Receive a Quotation</h3><p>Get pricing based on the work, materials and project scope discussed.</p></div>
+        <div class="step"><span class="num">04 / EXECUTE</span><h3>Project Delivery</h3><p>The agreed roofing or door work is completed professionally.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section testimonials" id="reviews">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Customer Reviews</div>
+        <h2>What customers are saying.</h2>
+        <p>Selected reviews from the business information you provided.</p>
+      </div>
+      <div class="review-grid">
+        <article class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <blockquote>“Great service from Global Roof and Doors. Professional team, quality work and fair pricing. Highly recommend.”</blockquote>
+          <footer>Christy Martins <span>Google review</span></footer>
+        </article>
+        <article class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <blockquote>“I awarded Global Roof and Doors a contract to roof our new building… Affordable price. Job well done!”</blockquote>
+          <footer>Temitope Babalola <span>Google review</span></footer>
+        </article>
+        <article class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <blockquote>“A reliable roofing company with quality products, fair prices, and excellent customer service.”</blockquote>
+          <footer>Alamu Adejumoke <span>Google review</span></footer>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-wrap">
+    <div class="container">
+      <div class="cta">
+        <div class="eyebrow">Start Your Project</div>
+        <h2>Need a roof or door solution for your property?</h2>
+        <p>Speak with Global Roof and Doors about your project and request a quotation.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Request a Quote</a>
+          <a href="tel:08032740641" class="btn btn-secondary">0803 274 0641</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container contact-grid">
+      <div>
+        <div class="eyebrow">Contact Global Roof and Doors</div>
+        <h2>Let’s discuss your project.</h2>
+        <p style="margin-top:18px">Call, send a WhatsApp message or visit the business location in Lagos.</p>
+
+        <div class="contact-list">
+          <div class="contact-item">
+            <small>Phone</small>
+            <span><a href="tel:08032740641">0803 274 0641</a></span>
+          </div>
+          <div class="contact-item">
+            <small>Address</small>
+            <span>10 Agege Motor Road, Onipetes Bus Stop, beside NNPC Petrol Station, Idi Mongoro, Dopemu, Lagos 100263</span>
+          </div>
+          <div class="contact-item">
+            <small>Business Hours</small>
+            <span>Open 24 hours</span>
+          </div>
+          <div class="contact-item">
+            <small>Plus Code</small>
+            <span>H8VP+HP Ikeja</span>
+          </div>
+        </div>
+      </div>
+
+      <form id="quoteForm">
+        <input id="name" type="text" placeholder="Your name" required>
+        <input id="phone" type="tel" placeholder="Phone number" required>
+        <select id="service" required>
+          <option value="">Select service</option>
+          <option>New Roof Installation</option>
+          <option>Roof Replacement</option>
+          <option>Roof Repair</option>
+          <option>Roof Maintenance</option>
+          <option>Door Solution</option>
+          <option>Project Consultation</option>
+        </select>
+        <input id="location" type="text" placeholder="Project location">
+        <textarea id="message" class="full" placeholder="Tell us briefly about your project"></textarea>
+        <button class="btn btn-primary full" type="submit">Send Quote Request on WhatsApp</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <div class="brand">
+        <div class="brand-mark">GR</div>
+        <div class="brand-name">GLOBAL ROOF <small>& DOORS</small></div>
+      </div>
+    </div>
+    <p>Professional roofing and door solutions in Lagos, Nigeria.</p>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/2348032740641?text=Hello%20Global%20Roof%20and%20Doors%2C%20I%20would%20like%20to%20request%20a%20quote." aria-label="Chat on WhatsApp">W</a>
+
+<script>
+  const header = document.getElementById('header');
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  document.getElementById('quoteForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const service = document.getElementById('service').value;
+    const location = document.getElementById('location').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    const text = `Hello Global Roof and Doors,
+
+My name is ${name}.
+Phone: ${phone}
+Service needed: ${service}
+Project location: ${location || 'Not specified'}
+
+Project details:
+${message || 'I would like to request a quotation.'}`;
+
+    window.open(`https://wa.me/2348032740641?text=${encodeURIComponent(text)}`, '_blank');
+  });
+</script>
+</body>
+</html>
